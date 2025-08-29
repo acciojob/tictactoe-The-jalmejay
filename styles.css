@@ -1,10 +1,62 @@
 /*  your css code here. If applicable */
 .container{
 	width:400px;
+	text-align:center;
     margin-right: auto;
     margin-left: auto;
 }
 .heading{
 	font-family: 'Permanent Marker', cursive;
 	font-weight: bold;
+}
+
+.form-input{
+	margin:5px;
+}
+.f-input{
+	height: 23px;
+	border:2px solid black;
+}
+
+#submit{
+	text-align: center;
+	border:2px solid black;
+	border-radius:5px;
+	font-size:15px;
+	padding:5px 65px;
+	background-color:white;
+}
+#submit:hover{
+		background-color:#E8EADD;
+		transition:1s;
+}
+
+.message {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+.board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      justify-content: center;
+      margin: 20px auto;
+      display: none; /* hidden initially */
+    }
+    .cell {
+      background: pink;
+      border: 1px solid black;
+      font-size: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+	font-family: 'Permanent Marker', cursive;
+	font-weight: bold;
+    }
+
+.cell:hover{
+	background-color:mintcream;
 }

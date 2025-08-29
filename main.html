@@ -11,13 +11,21 @@
 	<!-- the entire body must be written by student -->
 	<div class="container" >
 		<h1 class="heading"> TIC TAC TOE</h1>
-	<div>
-		<label for="player-1">Player 1 </label>
-		<input type="text" placeholder="enter name"/><br/>
-		<label for="player-1">Player 1 </label>
-		<input type="text" placeholder="enter name"/><br/>
-
-		<button>Start Game</button>
+			<div class="form">
+				<div class="form-input">
+					<label for="player-1">Player 1 </label>
+					<input class="f-input" type="text" id="player-1" placeholder="enter name"/><br/>
+				</div>
+				<div class="form-input">
+					<label for="player-2">Player 2 </label>
+					<input class="f-input" type="text" id="player-2" placeholder="enter name"/><br/>
+				</div>
+				<button type="button" id="submit" >Start Game</button>
+			</div>
+	
+	<div class="message"></div>
+    <div class="board"></div>
+	</div>
 	</div>
 	</div>
     <script type="text/javascript" src="./script.js">
