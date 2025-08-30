@@ -51,7 +51,7 @@ board.addEventListener("click",function(e){
 	  cell.style.backgroundColor = "purple";
 
       // Check Winner
-      if (checkWin()) {
+      if (checkWin(mark)) {
         message.textContent = `${currentPlayer} congratulations you won!`;
         gameActive = false;
         return;
