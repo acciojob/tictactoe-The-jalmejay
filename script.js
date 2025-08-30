@@ -68,10 +68,8 @@ board.addEventListener("click",function(e){
       currentPlayer = (currentPlayer === player1) ? player2 : player1;
       message.textContent = `${currentPlayer}, you're up`;
 });
-function checkWin() {
-      return winningConditions.some(condition => {
-        return condition.every(index => 
-          boardState[index] === (currentPlayer === player1 ? "x" : "o")
-        );
-      });
-    }
+function checkWin(mark) {
+  return winningConditions.some(condition => {
+    return condition.every(index => boardState[index] === mark);
+  });
+}
