@@ -37,37 +37,39 @@ submitBtn.addEventListener("click",function(){
 	
 });
 
-board.addEventListener("click",function(e){
-	const cell=e.target;
-	const cellIndex = parseInt(cell.id);
+board.addEventListener("click", function (e) {
+  const cell = e.target;
+  if (!cell.classList.contains("cell") || !gameActive) return;
 
-	if (!cell.classList.contains("cell") || !gameActive) return;
-      if (boardState[cellIndex] !== "") return; // already filled
+  const cellIndex = parseInt(cell.id, 10) - 1; // convert "1–9" → 0–8
 
-      // Mark X for player1 and O for player2
-      const mark = (currentPlayer === player1) ? "x" : "o";
-      boardState[cellIndex] = mark;
-      cell.textContent = mark;
-	  cell.style.backgroundColor = "purple";
+  if (boardState[cellIndex] !== "") return; // already filled
 
-      // Check Winner
-      if (checkWin(mark)) {
-        message.textContent = `${currentPlayer} congratulations you won!`;
-        gameActive = false;
-        return;
-      }
+  // Mark X for player1 and O for player2
+  const mark = (currentPlayer === player1) ? "x" : "o";
+  boardState[cellIndex] = mark;
+  cell.textContent = mark;
+  cell.style.backgroundColor = "purple";
 
-      // Check Draw
-      if (!boardState.includes("")) {
-        message.textContent = "It's a draw!";
-        gameActive = false;
-        return;
-      }
+  // Check Winner
+  if (checkWin(mark)) {
+    message.textContent = `${currentPlayer} congratulations you won!`;
+    gameActive = false;
+    return;
+  }
 
-      // Switch Turn
-      currentPlayer = (currentPlayer === player1) ? player2 : player1;
-      message.textContent = `${currentPlayer}, you're up`;
+  // Check Draw
+  if (!boardState.includes("")) {
+    message.textContent = "It's a draw!";
+    gameActive = false;
+    return;
+  }
+
+  // Switch Turn
+  currentPlayer = (currentPlayer === player1) ? player2 : player1;
+  message.textContent = `${currentPlayer}, you're up`;
 });
+
 function checkWin(mark) {
   return winningConditions.some(condition => {
     return condition.every(index => boardState[index] === mark);
