@@ -31,7 +31,7 @@ submitBtn.addEventListener("click",function(){
 	for(let i=0;i<9;i++){
 		let ceil=document.createElement("div");
 		ceil.classList.add("cell");
-		ceil.id=i;
+		ceil.id=i+1;
 		board.appendChild(ceil);
 	}
 	
