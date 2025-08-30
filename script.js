@@ -31,7 +31,7 @@ submitBtn.addEventListener("click",function(){
 	for(let i=0;i<9;i++){
 		let ceil=document.createElement("div");
 		ceil.classList.add("cell");
-		ceil.id=i+1;
+		ceil.id=i;
 		board.appendChild(ceil);
 	}
 	
@@ -39,7 +39,7 @@ submitBtn.addEventListener("click",function(){
 
 board.addEventListener("click",function(e){
 	const cell=e.target;
-	const cellIndex=cell.id;
+	const cellIndex = parseInt(cell.id);
 
 	if (!cell.classList.contains("cell") || !gameActive) return;
       if (boardState[cellIndex] !== "") return; // already filled
