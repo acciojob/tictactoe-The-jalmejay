@@ -1,6 +1,6 @@
 //your JS code here. If required.
-let player1Input=document.getElementById("player-1");
-let player2Input=document.getElementById("player-2");
+let player1Input=document.getElementById("player1");
+let player2Input=document.getElementById("player2");
 let submitBtn=document.getElementById("submit");
 let board=document.querySelector(".board");
 let message=document.querySelector(".message");
