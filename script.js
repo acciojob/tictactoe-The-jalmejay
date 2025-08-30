@@ -71,7 +71,7 @@ board.addEventListener("click",function(e){
 function checkWin() {
       return winningConditions.some(condition => {
         return condition.every(index => 
-          boardState[index] === (currentPlayer === player1 ? "X" : "O")
+          boardState[index] === (currentPlayer === player1 ? "x" : "o")
         );
       });
     }
