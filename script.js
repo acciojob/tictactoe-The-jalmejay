@@ -45,14 +45,14 @@ board.addEventListener("click",function(e){
       if (boardState[cellIndex] !== "") return; // already filled
 
       // Mark X for player1 and O for player2
-      const mark = (currentPlayer === player1) ? "X" : "O";
+      const mark = (currentPlayer === player1) ? "x" : "o";
       boardState[cellIndex] = mark;
       cell.textContent = mark;
 	  cell.style.backgroundColor = "purple";
 
       // Check Winner
       if (checkWin()) {
-        message.textContent = `${currentPlayer}, congratulations you won!`;
+        message.textContent = `${currentPlayer} congratulations you won!`;
         gameActive = false;
         return;
       }
